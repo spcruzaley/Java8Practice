@@ -5,13 +5,13 @@
     * [Reduce Example](src/main/java/streams/reduce/ReduceExamples.java) | [Test cases](src/test/java/streams/reduce/ReduceExamplesTest.java)
 
 * Lambda expressions used with:
-    * Consumers (**Pending**)
-    * Producers (**Pending**)
-    * Predicates (**Pending**)
-    * Functions (**Pending**)
+    * Consumers (*Pending*)
+    * Producers (*Pending*)
+    * Predicates (*Pending*)
+    * Functions (*Pending*)
 
 * Functions like 
-    * Intermediate (**Pending**)
-    * Terminal (**Pending**)
+    * Intermediate (*Pending*)
+    * Terminal (*Pending*)
 
-* Optional Class (**Pending**)
+* Optional Class (*Pending*)
