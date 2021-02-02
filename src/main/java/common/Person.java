@@ -3,11 +3,20 @@ package common;
 import java.util.Objects;
 
 public class Person {
+    private Integer id;
     private String name;
     private String email;
     private Integer age;
 
     public Person(String name, String email, Integer age) {
+        this.id = 0;
+        this.name = name;
+        this.email = email;
+        this.age = age;
+    }
+
+    public Person(Integer id, String name, String email, Integer age) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
@@ -37,6 +46,14 @@ public class Person {
         this.age = age;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,12 +61,13 @@ public class Person {
         Person person = (Person) o;
         return Objects.equals(name, person.name) &&
                 Objects.equals(email, person.email) &&
-                Objects.equals(age, person.age);
+                Objects.equals(age, person.age) &&
+                Objects.equals(id, person.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, age);
+        return Objects.hash(name, email, age, id);
     }
 
     @Override

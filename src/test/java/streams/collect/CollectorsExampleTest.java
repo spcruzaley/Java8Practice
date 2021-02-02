@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class CollectorsExampleTest {
@@ -45,6 +46,16 @@ public class CollectorsExampleTest {
         String actualNames = CollectorsExample.namesJoiningWithDelimiter(",");
 
         Assert.assertEquals(expectedNames, actualNames);
+    }
+
+    @Test
+    public void testBuildPeopleMap() {
+        Person expectedPerson = new Person(3,"Salvador", "salvador@gmail.com", 25);
+
+        Map<Integer, Person> map = CollectorsExample.buildPeopleMap();
+        Person actualPerson = map.get(3);
+
+        Assert.assertEquals(expectedPerson, actualPerson);
     }
 
 }
