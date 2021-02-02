@@ -3,6 +3,7 @@ package streams.reduce;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.IntSummaryStatistics;
 import java.util.Optional;
 
 public class ReduceExamplesTest {
@@ -36,6 +37,36 @@ public class ReduceExamplesTest {
                 .sumSequenceWithMethodReferenceAsOptional(nums);
 
         Assert.assertEquals(expectedSum, actualSum);
+    }
+
+    @Test
+    public void testGenerateStatisticsMaxAge() {
+        int expectedMaxAge = 34;
+
+        IntSummaryStatistics statistics = ReduceExamples.generateStatistics();
+        int actualMaxAge = statistics.getMax();
+
+        Assert.assertEquals(expectedMaxAge, actualMaxAge);
+    }
+
+    @Test
+    public void testGenerateStatisticsMinAge() {
+        int expectedMinAge = 23;
+
+        IntSummaryStatistics statistics = ReduceExamples.generateStatistics();
+        int actualMinAge = statistics.getMin();
+
+        Assert.assertEquals(expectedMinAge, actualMinAge);
+    }
+
+    @Test
+    public void testGenerateStatisticsAverageAge() {
+        double expectedAverageAge = 27.4;
+
+        IntSummaryStatistics statistics = ReduceExamples.generateStatistics();
+        double actualAverageAge = statistics.getAverage();
+
+        Assert.assertEquals(expectedAverageAge, actualAverageAge, 0.0);
     }
 
     private Integer[] buildNumsList() {

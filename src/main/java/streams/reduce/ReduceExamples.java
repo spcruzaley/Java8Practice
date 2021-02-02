@@ -1,6 +1,11 @@
 package streams.reduce;
 
+import common.Person;
+import streams.collect.CollectorsExample;
+
+import java.util.IntSummaryStatistics;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ReduceExamples {
@@ -48,6 +53,22 @@ public class ReduceExamples {
                 .reduce(Integer::sum);
 
         return totalLength;
+    }
+
+    /**
+     * IntSummaryStatistics class example, very useful if we need to get a statistics, we don't need to make additional
+     * tasks.
+     *
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testGenerateStatisticsMaxAge} for an example
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testGenerateStatisticsMinAge} for an example
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testGenerateStatisticsAverageAge} for an example
+     *
+     * @return
+     */
+    public static IntSummaryStatistics generateStatistics() {
+        return CollectorsExample.generateListOfPersonNames().stream()
+                .map(Person::getAge)
+                .collect(Collectors.summarizingInt(age -> age));
     }
 
 }
