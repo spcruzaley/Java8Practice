@@ -7,6 +7,7 @@ public class Person {
     private String name;
     private String email;
     private Integer age;
+    private Gender gender;
 
     public Person(String name, String email, Integer age) {
         this.id = 0;
@@ -20,6 +21,14 @@ public class Person {
         this.name = name;
         this.email = email;
         this.age = age;
+    }
+
+    public Person(Integer id, String name, String email, Integer age, Gender gender) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -54,6 +63,14 @@ public class Person {
         this.id = id;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,12 +79,13 @@ public class Person {
         return Objects.equals(name, person.name) &&
                 Objects.equals(email, person.email) &&
                 Objects.equals(age, person.age) &&
-                Objects.equals(id, person.id);
+                Objects.equals(id, person.id) &&
+                Objects.equals(gender, person.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, age, id);
+        return Objects.hash(name, email, age, id, gender);
     }
 
     @Override

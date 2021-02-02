@@ -1,10 +1,10 @@
 package streams.collect;
 
+import common.Gender;
 import common.Person;
+import common.PersonBuilder;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -100,6 +100,60 @@ public class CollectorsExample {
                         Person::getId,
                         Function.identity()
                 ));
+    }
+
+    /**
+     * Return a person Map using groupingBy to group by Gender
+     *
+     * @return
+     */
+    public static Map<Gender, List<Person>> mapPeopleByGender() {
+        return PersonBuilder.buildPersonList().stream()
+                .collect(
+                        Collectors.groupingBy(Person::getGender)
+                );
+    }
+
+    /**
+     * Return a Map with true/false keys, containing with true key all the elements that satisfy the given Predicate
+     *
+     * @return
+     */
+    public static Map<Boolean, List<Person>> mapPeopleByGenderUsingPartitioning() {
+        return PersonBuilder.buildPersonList().stream()
+                .collect(
+                        Collectors.partitioningBy(person -> person.getGender() == Gender.MALE)
+                );
+    }
+
+    /**
+     * Return a map grouped by Gender with the total number of that gender
+     *
+     * @return
+     */
+    public static Map<Gender, Long> mapCountingPeopleByGender() {
+        return PersonBuilder.buildPersonList().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Person::getGender, Collectors.counting()
+                        )
+                );
+    }
+
+    /**
+     * Return a map grouped by the Gender with the maximum age
+     *
+     * @return
+     */
+    public static Map<Gender, Optional<Person>> mapPersonByGenderWithTheMaxAge() {
+        return PersonBuilder.buildPersonList().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Person::getGender, Collectors.maxBy(
+                                        Comparator.comparing(Person::getAge)
+                                )
+                        )
+                );
     }
 
 }
