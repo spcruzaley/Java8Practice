@@ -53,4 +53,35 @@ public class CollectorsExample {
         return people;
     }
 
+    /**
+     * Using joining in conjunction with map to join all the names of each person located in a list.
+     *
+     * See {/src/test/streams/collect/CollectorsExampleTest#testNamesJoining} for an example
+     *
+     * @return
+     */
+    public static String namesJoining() {
+        List<Person> people = generateListOfPersonNames();
+
+        return people.stream()
+                .map(Person::getName)
+                .collect(Collectors.joining());
+    }
+
+    /**
+     * Using joining in conjunction with map to join all the names of each person in a list.
+     * In this case the names will be separated by the delimiter specified.
+     *
+     * See {/src/test/streams/collect/CollectorsExampleTest#testNamesJoiningWithDelimiter} for an example
+     *
+     * @return
+     */
+    public static String namesJoiningWithDelimiter(String delimiter) {
+        List<Person> people = generateListOfPersonNames();
+
+        return people.stream()
+                .map(Person::getName)
+                .collect(Collectors.joining(delimiter));
+    }
+
 }

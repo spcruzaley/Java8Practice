@@ -29,4 +29,22 @@ public class CollectorsExampleTest {
         Assert.assertEquals(expectedElements, actualElements);
     }
 
+    @Test
+    public void testNamesJoining() {
+        String expectedNames = "SantiagoTadeoSalvadorBenitoRaul";
+
+        String actualNames = CollectorsExample.namesJoining();
+
+        Assert.assertEquals(expectedNames, actualNames);
+    }
+
+    @Test
+    public void testNamesJoiningWithDelimiter() {
+        String expectedNames = "Santiago,Tadeo,Salvador,Benito,Raul";
+
+        String actualNames = CollectorsExample.namesJoiningWithDelimiter(",");
+
+        Assert.assertEquals(expectedNames, actualNames);
+    }
+
 }
