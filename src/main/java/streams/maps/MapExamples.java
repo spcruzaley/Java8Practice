@@ -11,6 +11,8 @@ public class MapExamples {
     /**
      * From a given List of Person, we will to returns a Set with only the Person names.
      *
+     * See {/src/test/java/streams/maps/MapExamplesTest#testMapPersonNamesFromPeopleList} for some examples
+     *
      * @param people
      * @return
      */

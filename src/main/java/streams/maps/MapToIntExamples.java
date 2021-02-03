@@ -9,6 +9,8 @@ public class MapToIntExamples {
      *
      * FIRST EXAMPLE: We are using lambda expression in 1st parameter
      *
+     * See {/src/test/streams/maps/MapToIntExamplesTest#testSumLengthWordsWithoutMethodReferenceAndWithMap} for some examples
+     *
      * @param words
      * @return
      */
@@ -24,6 +26,8 @@ public class MapToIntExamples {
      * Strings length sum using the reduce method.
      *
      * FIRST EXAMPLE: Now we switch the lambda expression by Method Reference
+     *
+     * See {/src/test/streams/maps/MapToIntExamplesTest#testSumLengthWordsWithMethodReferenceAndWithMap} for some examples
      *
      * @param words
      * @return

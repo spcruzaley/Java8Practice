@@ -15,6 +15,8 @@ public class ReduceExamples {
      *
      * FIRST EXAMPLE: Using lambda expression and identity value
      *
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testSumSequenceWithLambdaExpression} for an example
+     *
      * @param nums
      * @return
      */
@@ -30,6 +32,8 @@ public class ReduceExamples {
      *
      * FIRST EXAMPLE: Using Method Reference and identity value
      *
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testSumSequenceWithMethodReference} for an example
+     *
      * @param nums
      * @return
      */
@@ -44,6 +48,8 @@ public class ReduceExamples {
      * Get sum of numbers located in an Integer array
      *
      * FIRST EXAMPLE: Using Method Reference and now returning an Optional value
+     *
+     * See {/src/test/streams/reduce/ReduceExamplesTest#testSumSequenceWithMethodReferenceAsOptional} for an example
      *
      * @param nums
      * @return
